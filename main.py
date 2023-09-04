@@ -143,7 +143,7 @@ def scroll_subreddit():
             for c in range(2):
                 pyautogui.scroll(-abs(random.randrange(500, 600)))
                 time.sleep(0.3)
-            button_loc = locate_button('reddit_post.png')
+            button_loc = locate_button('img/reddit_post.png')
             if button_loc is not None:
                 button_x, button_y = button_loc
                 button_center_x = button_x - random.randrange(20, 40)
