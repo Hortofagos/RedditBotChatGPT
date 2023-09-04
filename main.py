@@ -60,13 +60,13 @@ def locate_button(template_path):
     return button_loc
 
 def new_subreddit(sub):
-    go_home = locate_button('home.png')
+    go_home = locate_button('img/home.png')
     button_x, button_y = go_home
     button_center_x = button_x + random.randrange(30, 40)
     button_center_y = button_y + random.randrange(15, 20)
     pyautogui.moveTo(button_center_x, button_center_y, duration=random.uniform(0.8, 2.5))
     pyautogui.click()
-    search_bar = locate_button('search_sub.png')
+    search_bar = locate_button('img/search_sub.png')
     button_x, button_y = search_bar
     button_center_x = button_x + random.randrange(90, 100)
     button_center_y = button_y + random.randrange(15, 20)
@@ -86,7 +86,7 @@ def write_comment():
 
     while True:
         time.sleep(random.uniform(0.5, 9.5))
-        bottom_of_page = locate_button('bottom_post.png')
+        bottom_of_page = locate_button('img/bottom_post.png')
         if bottom_of_page is not None:
             break
         def random_mouse_movement():
@@ -104,7 +104,7 @@ def write_comment():
             time.sleep(random.uniform(0.7, 3.2))
             print("Button clicked")
 
-        button_location = locate_button('button.png')
+        button_location = locate_button('img/button.png')
         if button_location is not None:
             extracted_text = copy_text(button_location)
             if extracted_text:
@@ -119,12 +119,12 @@ def write_comment():
                 time.sleep(random.uniform(0.4, 1.6))
                 pyautogui.scroll(-100)
                 time.sleep(0.5)
-                button_location_2 = locate_button('button_reply.png')
+                button_location_2 = locate_button('img/button_reply.png')
                 if button_location_2 is not None:
                     move_to_button(button_location_2)
                 print("comment typed")
                 time.sleep(1)
-                bottom_of_page = locate_button('bottom_post.png')
+                bottom_of_page = locate_button('img/bottom_post.png')
                 if bottom_of_page is not None:
                     break
             else:
